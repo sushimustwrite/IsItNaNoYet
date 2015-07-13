@@ -1,0 +1,5 @@
+/config.js
+*.csv
+*.pyc
+*.dat
+.python-version

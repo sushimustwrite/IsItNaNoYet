@@ -1,0 +1,34 @@
+// copy this file to config.js, and change the values below to real ones
+
+module.exports = {
+
+  development: {
+    port: 2000,
+    visible: true,
+
+    streaming: [
+      "http://localhost:3000"
+    ],
+
+    log: {
+      join: true,
+      info: true,
+      debug: false
+    }
+  },
+
+  production: {
+    port: 80,
+    visible: false,
+
+    streaming: [
+      "http://sockets.example.com"
+    ],
+
+    log: {
+      join: false,
+      info: false,
+      debug: false
+    }
+  },
+}
