@@ -1,0 +1,219 @@
+<!--
+
+  Built by @sushimustwrite, sushimustwrite.com and wikiwrimo.org
+
+  Bug reports and stuff:
+    github.com/sushimustwrite/isitnanoyet/issues
+
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="authors" href="/humans.txt" />
+
+  <meta charset="utf-8" />
+  <title>Is it NaNo Yet?</title>
+
+  <link rel="shortcut icon" href="/icons/large.png" />
+
+  <!-- <link rel="alternate" title="Is It NaNo Yet?" href="/rss.xml" type="application/rss+xml" />
+  <link rel="alternate" title="Is It NaNo Yet? (November and Camp)" href="/rss.xml?only=yes" type="application/rss+xml" /> -->
+
+  <meta name="twitter:site" content="@sushimustwrite">
+  <meta name="twitter:creator" content="@sushimustwrite">
+  <meta property="og:site_name" content="Is It NaNo Yet?" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://isitnanoyet.com" />
+
+  <meta property="og:title" content="Is It NaNo Yet?" />
+
+  <meta name="description" content="Is it NaNo yet? No? What about now?">
+  <meta property="og:description" content="Is it NaNo yet? No? What about now?" />
+
+
+  <style type="text/css">
+    html, body {height: 100%;}
+    body {text-align: center;}
+
+    a#answer {
+      display: inline-block;
+      margin-top: 150px;
+      font-weight: bold;
+      font-size: 120pt;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      color: black;
+    }
+
+    .count {
+      display: inline-block;
+      margin-top: 25px;
+      font-weight: bold;
+      font-size: 40px;
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      color: black;
+    }
+
+
+    #legend {
+      position: fixed;
+      top: 0; right: 0;
+      width: 200px;
+      padding-right: 15px; padding-top: 5px;
+      text-align: right;
+      font-size: 10pt;
+    }
+
+  #links {
+	 text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;	 
+      padding-bottom: 5px;
+      font-size: 10pt;
+      z-index: 9999;
+	 font-family: serif;
+
+      display: inline;
+	 
+
+    }
+
+    #links a {
+      color: #333;
+      display: inline;
+      margin-right: 10px;
+    } 
+  </style>
+
+  <script type="text/javascript" src="../public/js/christmas.js"></script>
+
+  <!-- IE10 JS targeting, from http://stackoverflow.com/a/17099988 -->
+  <!-- IE11 JS targeting, from http://stackoverflow.com/a/17447695 -->
+  <script type="text/javascript">
+    window._ie10 = ("onpropertychange" in document && !!window.matchMedia);
+    window._ie11 = !!navigator.userAgent.match(/Trident\/7.0; rv 11/);
+    window._ie = window._ie10 || window._ie11;
+  </script>
+</head>
+
+<body>
+  <!--
+    Initial 'title' and noscript values are server-side fallbacks,
+    calculated with UTC, for clients who do not have JS enabled.
+  -->
+  <p><a id="answer"
+    href="http://nanowrimo.org"
+    target="_blank"
+    title="IFTTT">
+    <noscript><%= answer %></noscript>
+  </a></p>
+
+
+
+  <div id="links">
+  <p>IsItNaNoYet.com is an unofficial NaNoWriMo website created by participants. This site's contents are not verified, reviewed, or endorsed by <a href="http://www.nanowrimo.org">National Novel Writing Month</a><br>
+    <a href="https://twitter.com/sushimustwrite" target="_blank">by @sushimustwrite</a>
+    <a href="http://www.wikiwrimo.org" target="_blank">Wikiwrimo</a>
+    <a href="https://github.com/sushimustwrite/IsItNaNoYet" target="_blank">Source</a></p>
+    
+  </div>
+
+  <div id="legend"></div>
+
+  <!-- replace fallback data with locally calculated values -->
+  <script type="text/javascript">
+    var country = "<%= country %>";
+    if (!(Christmas.countries[country] && Christmas.countries[country].width))
+      country = "EO";
+
+    var me = {
+      country: country
+    };
+
+    var checkedAt; // store last check, to manage race conditions
+    function updateChristmas(isIt) {
+      me.christmas = isIt;
+
+      var answer;
+      if (isIt)
+        answer = Christmas.yes(country);
+      else
+        answer = Christmas.no(country);
+
+      var elem = document.getElementById('answer');
+      elem.innerHTML = answer;
+      elem.setAttribute("title", answer);
+
+      checkedAt = Date.now();
+    }
+
+    updateChristmas(Christmas.isIt());
+  </script>
+
+
+<div class="count"><span id="countdown"></span><br>
+<span id="beforeafter"></span>
+</div>
+
+<script>var target_date = new Date("August 1, 2015").getTime();
+//var next_date = new Date("December 1, 2015").getTime();
+ 
+// variables for time units
+var days, hours, minutes, seconds;
+ 
+// get tag element
+var countdown = document.getElementById("countdown");
+ 
+// update the tag with id "countdown" every 1 second
+setInterval(function () {
+ 
+    // find the amount of "seconds" between now and target
+    var current_date = new Date().getTime();
+    //check if target_date has already passed. If yes, use another date. This way I don't
+    //have to change the countdown date as often.
+    if (target_date < current_date) {
+    target_date = new Date("December 1, 2015").getTime();  }
+    var seconds_left = (target_date - current_date) / 1000;
+ 
+    // do some time calculations
+    days = parseInt(seconds_left / 86400);
+    seconds_left = seconds_left % 86400;
+     
+    hours = parseInt(seconds_left / 3600);
+    seconds_left = seconds_left % 3600;
+     
+    minutes = parseInt(seconds_left / 60);
+    seconds = parseInt(seconds_left % 60);
+     
+    // format countdown string + set tag value
+    countdown.innerHTML = days + " days, " + hours + " hours, "
+    + minutes + " minutes, " + seconds + " seconds";  
+ 
+}, 1000);
+</script>
+<script>
+
+var beforeafter = document.getElementById("beforeafter");
+
+    // add code that changes text from "until nano arrives" or "until nano ends"
+     var april_camp = 3;
+     var july_camp = 6;
+     var nano_main = 10;  
+
+    var current_month = new Date().getMonth();
+
+    if (current_month == april_camp || current_month == july_camp || current_month == nano_main) {
+       beforeafter.innerHTML = "remaining in NaNo.";  }
+    else { beforeafter.innerHTML = "until NaNo arrives."; }
+</script> 
+
+
+
+
+  
+</body>
+</html>
