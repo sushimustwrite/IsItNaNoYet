@@ -1,50 +1,16 @@
 /* TEAM */
 
-isitchristmas.com Core Team:
+isitnanoyet.com team:
 
-  Eric Mill, @konklone, konklone.com
-  Brandon Jones, @btj, kingofprussia.com
+    @sushimustwrite, who gets silly ideas and makes them happen
 
 
 /* THANKS */
 
-The IFTTT team, for helping me ship ifttt.com/isitchristmas
-Olivia Cheng, for the wonderful IFTTT channel icon.
-Micah Rich, for clutch design help over the years.
-Brittany Rose, for the idea of using arrow keys for rotation.
-
-Anyone who's ever submitted a patch or filed an issue in Github that I acted on:
-
-  github.com/mherdeg
-  github.com/Quiark
-  github.com/xmajox
-  github.com/thisisparker
-  github.com/ivkos
-  github.com/Alotar
-  github.com/liiiink
-  github.com/ebroder
-  github.com/quanganhdo
-  github.com/andrederegle
-  github.com/shh-
-  github.com/c933103
-
-  and github.com/morgante for adding HTML5 notifications
-
-Compiled from github.com/isitchristmas/web
-
-And to the good people whose emoji I copied, at:
-
-  http://www.emoji-cheat-sheet.com
-  https://github.com/arvida/emoji-cheat-sheet.com
+Eric Mill and the other contributors at isitchristmas.com for releasing the site under a license that lets me make silly things like this.
+The @isitnanoyet Twitter, whose existence gave me this idea.
+And of course, the National Novel Writing Month community for being amazing.
 
 /* SITE */
 
-Lots of things!
-
-  2007-2011: PHP/MySQL + Dreamhost/Webfaction
-  2012: PHP/MySQL + Webfaction, Node + Nodejitsu
-    https://konklone.com/post/isitchristmas-dot-com-2012
-  2013: Node + EC2, Node + Nodejitsu/Heroku/dotCloud
-    https://konklone.com/post/how-to-hack-the-developer-console-to-be-needlessly-interactive
-    https://konklone.com/post/isitchristmas-dot-com-2013-more-and-better
-  2014: Node + EC2, Node + Heroku
+2015-present

@@ -2,13 +2,13 @@
 
 var Christmas = {
   time: {
-    month: 11,
-    date: 25
+    month: 6,
+    //date: 12
   },
 
   isIt: function(date) {
     if (!date) date = new Date();
-    return (date.getMonth() == Christmas.time.month && date.getDate() == Christmas.time.date);
+    return (date.getMonth() == Christmas.time.month); // && date.getDate() == Christmas.time.date);
   },
 
   thisYear: function() {
