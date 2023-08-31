@@ -2,7 +2,7 @@
 
 var Christmas = {
   time: {
-    month: 6,
+    month: 10,
     //date: 12
   },
 
