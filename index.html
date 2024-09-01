@@ -107,19 +107,19 @@
     calculated with UTC, for clients who do not have JS enabled.
   -->
   <p><a id="answer"
-    href="https://www.nanowrimo.org"
+    href="https://docs.google.com/document/d/e/2PACX-1vSYcdosGLoPFI_Dc--vuC9Bl4-OUFGcmHgBRt2aHSRVWBPc6su4AMFY5iDgZGyC379Zm8C7zhBd2zuf/pub"
     target="_blank"
-    title="What about now?">
-    <noscript><%= answer %></noscript>
+    title="Just read it.">
+    <noscript>NO</noscript>
   </a></p>
 
 
 
   <div id="links">
-  <p>IsItNaNoYet.com is an unofficial NaNoWriMo website created by participants. This site's contents are not verified, reviewed, or endorsed by <a href="https://www.nanowrimo.org">National Novel Writing Month</a><br>
+  <p>IsItNaNoYet.com is an unofficial NaNoWriMo website created by now-former participants.<br>
     <a href="https://twitter.com/sushimustwrite" target="_blank">by @sushimustwrite</a>
-    <a href="http://www.wikiwrimo.org" target="_blank">Wikiwrimo</a>
-    <a href="https://github.com/sushimustwrite/IsItNaNoYet" target="_blank">Source</a></p>
+    <a href="https://github.com/sushimustwrite/IsItNaNoYet" target="_blank">Source</a>
+    </p>
     
   </div>
 
@@ -156,61 +156,8 @@
   </script>
 
 
-<div class="count"><span id="countdown"></span><br>
-<span id="beforeafter"></span>
+<div class="count"><a href="https://docs.google.com/document/d/e/2PACX-1vSYcdosGLoPFI_Dc--vuC9Bl4-OUFGcmHgBRt2aHSRVWBPc6su4AMFY5iDgZGyC379Zm8C7zhBd2zuf/pub" target="_blank">What's happening at NaNoWriMo HQ?</a>
 </div>
-<!--CHANGE target_date and date in if loop here -->
-<script>var target_date = new Date("November 1, 2023").getTime();
-//var next_date = new Date("December 1, 2015").getTime();
- 
-// variables for time units
-var days, hours, minutes, seconds;
- 
-// get tag element
-var countdown = document.getElementById("countdown");
- 
-// update the tag with id "countdown" every 1 second
-setInterval(function () {
- 
-    // find the amount of "seconds" between now and target
-    var current_date = new Date().getTime();
-    //check if target_date has already passed. If yes, use another date. This way I don't
-    //have to change the countdown date as often.
-    if (target_date < current_date) {
-    target_date = new Date("December 1, 2023").getTime();  }
-    var seconds_left = (target_date - current_date) / 1000;
- 
-    // do some time calculations
-    days = parseInt(seconds_left / 86400);
-    seconds_left = seconds_left % 86400;
-     
-    hours = parseInt(seconds_left / 3600);
-    seconds_left = seconds_left % 3600;
-     
-    minutes = parseInt(seconds_left / 60);
-    seconds = parseInt(seconds_left % 60);
-     
-    // format countdown string + set tag value
-    countdown.innerHTML = days + " days, " + hours + " hours, "
-    + minutes + " minutes, " + seconds + " seconds";  
- 
-}, 1000);
-</script>
-<script>
-
-var beforeafter = document.getElementById("beforeafter");
-
-    // add code that changes text from "until nano arrives" or "until nano ends"
-     var april_camp = 3;
-     var july_camp = 6;
-     var nano_main = 10;  
-
-    var current_month = new Date().getMonth();
-
-    if (current_month == april_camp || current_month == july_camp || current_month == nano_main) {
-       beforeafter.innerHTML = "until NaNoWriMo ends.";  }
-    else { beforeafter.innerHTML = "until NaNoWriMo begins!"; }
-</script> 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
